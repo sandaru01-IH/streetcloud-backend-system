@@ -26,7 +26,7 @@
 
 Street Cloud keeps the phone thin. The API owns sessions, photographs, generation jobs, the word cloud, and Alexander scoring. A private GPU machine dials out to the API. It never waits for the phone to open a port, and a private job is never silently handed to a cloud model.
 
-The phone client is a separate repository: [Street Cloud mobile app](https://github.com/sandaru01-IH/Street-cloud-Mobile-app).
+The phone client is a separate repository: [Street Cloud mobile app](https://github.com/sandaru01-IH/streetcloud-frontend---mobile-application).
 
 ## What this service does
 
