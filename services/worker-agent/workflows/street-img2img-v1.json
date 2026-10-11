@@ -1,0 +1,45 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": { "image": "street.jpg" }
+  },
+  "2": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": { "ckpt_name": "RealVisXL_V5.0.safetensors" }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": { "text": "", "clip": ["2", 1] }
+  },
+  "4": {
+    "class_type": "CLIPTextEncode",
+    "inputs": { "text": "", "clip": ["2", 1] }
+  },
+  "5": {
+    "class_type": "VAEEncode",
+    "inputs": { "pixels": ["1", 0], "vae": ["2", 2] }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 1,
+      "steps": 20,
+      "cfg": 6.5,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 0.45,
+      "model": ["2", 0],
+      "positive": ["3", 0],
+      "negative": ["4", 0],
+      "latent_image": ["5", 0]
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": { "samples": ["6", 0], "vae": ["2", 2] }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": { "filename_prefix": "streetcloud", "images": ["7", 0] }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "workflowId": "street-img2img-v1",
+  "ready": true,
+  "reason": "ComfyUI on this PC lists RealVisXL_V5.0.safetensors."
+}
